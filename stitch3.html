@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Velvet Wolf | Premium Coffee</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "secondary": "#5f5e5e",
+                    "background": "#f9f9f9",
+                    "border-light": "#E5E5E5",
+                    "error": "#ba1a1a",
+                    "inverse-surface": "#2f3131",
+                    "wolf-black": "#121212",
+                    "secondary-fixed": "#e5e2e1",
+                    "surface-container": "#eeeeee",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary-fixed-variant": "#574500",
+                    "tertiary-fixed-dim": "#b4c5ff",
+                    "surface": "#f9f9f9",
+                    "on-tertiary-container": "#254188",
+                    "on-tertiary-fixed": "#00174b",
+                    "on-primary-fixed": "#241a00",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#97b0ff",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "tertiary": "#415ba4",
+                    "on-tertiary-fixed-variant": "#27438a",
+                    "on-primary-container": "#554300",
+                    "primary-container": "#d4af37",
+                    "primary": "#735c00",
+                    "surface-bright": "#f9f9f9",
+                    "inverse-on-surface": "#f0f1f1",
+                    "on-secondary-fixed-variant": "#474746",
+                    "on-background": "#1a1c1c",
+                    "inverse-primary": "#e9c349",
+                    "surface-tint": "#735c00",
+                    "surface-variant": "#e2e2e2",
+                    "outline-variant": "#d0c5af",
+                    "surface-container-low": "#f3f3f4",
+                    "primary-fixed": "#ffe088",
+                    "secondary-container": "#e2dfde",
+                    "surface-container-highest": "#e2e2e2",
+                    "error-container": "#ffdad6",
+                    "surface-dim": "#dadada",
+                    "on-surface": "#1a1c1c",
+                    "primary-fixed-dim": "#e9c349",
+                    "soft-gray": "#F9F9F9",
+                    "surface-container-high": "#e8e8e8",
+                    "tertiary-fixed": "#dbe1ff",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#636262",
+                    "outline": "#7f7663",
+                    "on-surface-variant": "#4d4635",
+                    "gold-ink": "#D4AF37",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "max-width": "1280px",
+                    "margin-desktop": "80px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["metropolis", "sans-serif"],
+                    "headline-md": ["metropolis", "sans-serif"],
+                    "body-lg": ["sourceSerifFour", "serif"],
+                    "headline-lg-mobile": ["metropolis", "sans-serif"],
+                    "label-caps": ["metropolis", "sans-serif"],
+                    "display-lg": ["metropolis", "sans-serif"],
+                    "body-md": ["sourceSerifFour", "serif"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "300"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        @font-face {
+            font-family: 'metropolis';
+            src: url('https://fonts.cdnfonts.com/css/metropolis') format('woff2');
+        }
+        @font-face {
+            font-family: 'sourceSerifFour';
+            src: url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+        }
+
+        /* Mobile specific adjustments */
+        body {
+            background-color: #f9f9f9;
+            color: #1a1c1c;
+            overflow-x: hidden;
+        }
+
+        .mobile-nav-overlay {
+            clip-path: circle(0% at 100% 0%);
+            transition: clip-path 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        .mobile-nav-overlay.active {
+            clip-path: circle(150% at 100% 0%);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md selection:bg-gold-ink/30">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-20 bg-surface/90 backdrop-blur-sm border-b border-border-light">
+<div class="flex items-center gap-4">
+<button class="p-2 transition-opacity hover:opacity-70" id="menuBtn">
+<span class="material-symbols-outlined text-on-surface">menu</span>
+</button>
+</div>
+<a class="text-headline-md font-headline-md font-bold tracking-widest text-on-surface uppercase" href="#">
+            Velvet Wolf
+        </a>
+<div class="flex items-center">
+<button class="p-2 transition-opacity hover:opacity-70">
+<span class="material-symbols-outlined text-on-surface">shopping_bag</span>
+</button>
+</div>
+</nav>
+<!-- Fullscreen Mobile Menu Overlay -->
+<div class="mobile-nav-overlay fixed inset-0 z-[60] bg-wolf-black flex flex-col justify-center items-center px-10 text-white" id="navOverlay">
+<button class="absolute top-6 right-6 p-2" id="closeBtn">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+<div class="flex flex-col gap-10 items-center text-center">
+<a class="font-label-caps text-label-caps text-gold-ink border-b-2 border-gold-ink pb-1" href="#">Locations</a>
+<a class="font-label-caps text-label-caps text-surface-bright hover:text-gold-ink transition-colors duration-300" href="#">Ethos</a>
+<a class="font-label-caps text-label-caps text-surface-bright hover:text-gold-ink transition-colors duration-300" href="#">Our Story</a>
+<a class="font-label-caps text-label-caps text-surface-bright hover:text-gold-ink transition-colors duration-300" href="#">The Brew Guide</a>
+<a class="font-label-caps text-label-caps text-surface-bright hover:text-gold-ink transition-colors duration-300" href="#">Journal</a>
+</div>
+<div class="mt-20 pt-10 border-t border-white/10 w-full flex justify-center gap-6">
+<span class="material-symbols-outlined text-white/50">brand_awareness</span>
+<span class="material-symbols-outlined text-white/50">social_leaderboard</span>
+<span class="material-symbols-outlined text-white/50">public</span>
+</div>
+</div>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[85vh] w-full overflow-hidden flex flex-col justify-end p-6 pb-20">
+<div class="absolute inset-0 z-0">
+<img alt="Hero Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAureKykIA5p3r3nnZ4KsZABnnnM-RdUEKJJBI65riEIz8ZvCj3OFzTemvpN0ch7dEGS9FnH51hWR55PrcXK0xzC2uL0rWqyOzZlexFeyLx-Rx7o628u5GElcXGhXwzcCfejDtxwQup8wWzl2rH6t1AHUzd_2CDAphDsMs4VAn3_0vBq9cPGAD8Rfj2D-rMlC5jueMeOXeCjxqRviWENLOyCVho8iMCdCNyo57fJirWRSjX-W22LEfvHghw__jYg7OTConzNfEj3Ak"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10 space-y-6">
+<span class="font-label-caps text-label-caps text-gold-ink tracking-[0.3em]">CRAFTED IN SILENCE</span>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-white max-w-[280px]">Architectural Precision In Every Pour.</h1>
+<div class="pt-4">
+<button class="bg-gold-ink text-white font-label-caps text-label-caps px-8 py-5 tracking-widest active:scale-95 transition-transform duration-200">
+                        EXPLORE THE ETHOS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Intro Text -->
+<section class="py-24 px-6 bg-surface">
+<div class="max-w-max-width mx-auto">
+<p class="font-label-caps text-label-caps text-gold-ink mb-8">THE PHILOSOPHY</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface mb-8 leading-snug">
+                    We believe coffee is an intentional act of design. A balance of tension, warmth, and the geometry of taste.
+                </h2>
+<p class="font-body-md text-body-md text-secondary leading-relaxed">
+                    Velvet Wolf isn't just a cafe. It is an exploration of quiet luxury. We curate spaces that breathe and flavors that resonate long after the final sip. Each location is a study in Modernist aesthetics and sensory purity.
+                </p>
+</div>
+</section>
+<!-- Product Highlight (Bento-style on mobile) -->
+<section class="px-6 py-12 flex flex-col gap-6">
+<div class="w-full aspect-[4/5] bg-surface-container overflow-hidden border border-border-light relative group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed close-up shot of a minimalist white ceramic coffee mug with a gold wolf head logo sitting on a white marble countertop. The background shows a blurry, bright, and airy modern cafe interior with light wood accents and soft natural daylight. The image evokes a quiet luxury aesthetic with a clean white and gold color palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNAmjB1HV05JGmMP7PFdHz0NitpUzw4vmjSByB1OGqRkVs-Mh4SCBE_209FT8ol9tSoYhTKJWpIUkrolvY3QWSf_BbYWyr10BqF32m0VHOGLK7LJ5WR51WlqGklyfEzGJn1RKx6WxRudeykRLUj-l91NlBu2-15Kjd8pO1fZOhv5JOIDFxaXDvpyypfdwYiuUHo4Dt2pnACuBvjROXxMkqF6JEw_qxWtu4OFPDPPFNRP56AcfDpi_QBHzY3oLekA-K98wfI4SRmbED"/>
+<div class="absolute bottom-0 left-0 p-8 w-full bg-white/10 backdrop-blur-md">
+<h3 class="font-headline-md text-headline-md text-white">The Signature Blend</h3>
+<p class="font-label-caps text-label-caps text-white/80 mt-2">Notes of Dark Cacao &amp; Smoke</p>
+</div>
+</div>
+<div class="flex flex-col gap-6">
+<div class="p-10 bg-wolf-black text-white border border-wolf-black flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-gold-ink text-4xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div>
+<h3 class="font-headline-md text-headline-md mb-2">Award Winning Roast</h3>
+<p class="font-body-md text-body-md text-white/60">Voted best minimalist brew experience for three consecutive years.</p>
+</div>
+<a class="font-label-caps text-label-caps text-gold-ink inline-flex items-center gap-2" href="#">
+                        READ MORE <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="w-full aspect-[4/3] border border-border-light overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="An artistic architectural shot of a minimalist cafe interior featuring a long, sleek white counter, high-end brass coffee equipment, and light oak stools. The walls are stark white with large windows letting in soft, diffuse light. The space is serene and empty, emphasizing clean lines and high-end design in a quiet luxury style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjIS_LnoiauPUEEy8aQmRzmh4liLp5WfLngHMl-Bib4AUXVIgfAtVrECkSlwRdkyp6UFLZ8_mZ_Tp4i767yE80MvEJ49Z1QoxMWsA99a45kxyqmyzEcsIVxiT30KsnASVsjetzPe_-w8XS6YZLExl-f9uRgLWe75r00Hr3-tBwBmM4yIU2P5vz_H_yRBh-NEcrZM9x4GSJjRKsihllymf2lYPCdKBZMtkra-ilEy5SVWKMUrq5kpyyZp973hREGjZ3cr8f9AM-jycx"/>
+</div>
+</div>
+</section>
+<!-- Locations List -->
+<section class="py-24 px-6 border-t border-border-light">
+<h2 class="font-label-caps text-label-caps text-on-surface mb-12 tracking-widest">CURATED SPACES</h2>
+<div class="divide-y divide-border-light">
+<div class="py-8 flex justify-between items-center group">
+<div>
+<p class="font-headline-md text-headline-md">London, Shoreditch</p>
+<p class="font-label-caps text-label-caps text-secondary mt-1">E1 6HU — Industrial Minimalism</p>
+</div>
+<span class="material-symbols-outlined text-gold-ink opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+<div class="py-8 flex justify-between items-center group">
+<div>
+<p class="font-headline-md text-headline-md">Kuwait City, Al Hamra</p>
+<p class="font-label-caps text-label-caps text-secondary mt-1">Level 2 — Desert Modernism</p>
+</div>
+<span class="material-symbols-outlined text-gold-ink opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+<div class="py-8 flex justify-between items-center group">
+<div>
+<p class="font-headline-md text-headline-md">Dubai, D3</p>
+<p class="font-label-caps text-label-caps text-secondary mt-1">Building 4 — Concrete Sanctuary</p>
+</div>
+<span class="material-symbols-outlined text-gold-ink opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+</div>
+</section>
+<!-- Ethos Section with Floating Element -->
+<section class="relative bg-white py-32 px-6 overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-gold-ink/5 rounded-full -mr-32 -mt-32"></div>
+<div class="max-w-max-width mx-auto text-center space-y-10">
+<p class="font-label-caps text-label-caps text-gold-ink">BEYOND THE BEAN</p>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile italic">"Simplicity is the ultimate sophistication."</h2>
+<p class="font-body-md text-body-md text-secondary max-w-sm mx-auto">
+                    Every element of Velvet Wolf is intentional. From the weight of our ceramic to the hertz of our background ambiance.
+                </p>
+<div class="pt-10">
+<button class="border border-gold-ink text-gold-ink font-label-caps text-label-caps px-10 py-4 hover:bg-gold-ink hover:text-white transition-colors duration-300">
+                        THE VELVET ETHOS
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-6 bg-surface border-t border-border-light">
+<div class="flex flex-col gap-12">
+<div>
+<a class="font-headline-md text-headline-md text-on-surface uppercase font-bold tracking-widest block mb-4" href="#">
+                    Velvet Wolf
+                </a>
+<p class="font-body-md text-body-md text-secondary">Architectural Coffee Roasters</p>
+</div>
+<div class="grid grid-cols-2 gap-x-8 gap-y-6">
+<div class="flex flex-col gap-4">
+<p class="font-label-caps text-label-caps text-on-surface">LOCATIONS</p>
+<a class="font-body-md text-body-md text-secondary hover:text-gold-ink transition-colors" href="#">London</a>
+<a class="font-body-md text-body-md text-secondary hover:text-gold-ink transition-colors" href="#">Kuwait</a>
+<a class="font-body-md text-body-md text-secondary hover:text-gold-ink transition-colors" href="#">Dubai</a>
+</div>
+<div class="flex flex-col gap-4">
+<p class="font-label-caps text-label-caps text-on-surface">LEGAL</p>
+<a class="font-body-md text-body-md text-secondary hover:text-gold-ink transition-colors" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-secondary hover:text-gold-ink transition-colors" href="#">Terms</a>
+<a class="font-body-md text-body-md text-secondary hover:text-gold-ink transition-colors" href="#">Shipping</a>
+</div>
+</div>
+<div class="pt-12 border-t border-border-light flex flex-col gap-6">
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-secondary hover:text-gold-ink transition-colors">social_distance</span>
+<span class="material-symbols-outlined text-secondary hover:text-gold-ink transition-colors">camera</span>
+<span class="material-symbols-outlined text-secondary hover:text-gold-ink transition-colors">alternate_email</span>
+</div>
+<p class="font-label-caps text-[10px] text-secondary tracking-widest">
+                    © 2024 VELVET WOLF. ALL RIGHTS RESERVED.
+                </p>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation Bar (Contextual) -->
+<div class="md:hidden fixed bottom-6 left-6 right-6 h-16 bg-wolf-black/90 backdrop-blur-md rounded-full z-40 flex justify-around items-center px-4 shadow-2xl">
+<a class="flex flex-col items-center gap-1 text-gold-ink" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-surface-bright/50" href="#">
+<span class="material-symbols-outlined">explore</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-surface-bright/50" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-surface-bright/50" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+<script>
+        const menuBtn = document.getElementById('menuBtn');
+        const closeBtn = document.getElementById('closeBtn');
+        const navOverlay = document.getElementById('navOverlay');
+
+        menuBtn.addEventListener('click', () => {
+            navOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Simple scroll reveal effect for sections
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-8');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
