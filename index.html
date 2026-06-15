@@ -1,22 +1,69 @@
-<!doctype html>
-<html class="light" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Velvet Wolf — architectural precision in every pour. Premium coffee in the UK and Kuwait."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;1,8..60,400&display=swap" rel="stylesheet" />
-    <link href="https://fonts.cdnfonts.com/css/metropolis" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" rel="stylesheet" />
-    <title>Velvet Wolf | Premium Coffee</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Have You Spotted the Wolf?</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffffff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant SC', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 5vw, 4.5rem);
+      letter-spacing: 0.18em;
+      color: transparent;
+      background: linear-gradient(105deg, #7a5a00, #c9970a, #f5c518, #e8b800, #c9970a, #7a5a00);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: goldShimmer 5s ease-in-out infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #c9970a;
+      width: 0;
+      animation: typing 3.5s steps(30, end) forwards, goldShimmer 5s ease-in-out 3.5s infinite, blink 0.75s step-end 3.5s 6;
+    }
+
+    @keyframes typing {
+      from { width: 0; border-right-color: #c9970a; }
+      to   { width: 100%; border-right-color: #c9970a; }
+    }
+
+    @keyframes blink {
+      0%, 100% { border-right-color: #c9970a; }
+      50%       { border-right-color: transparent; }
+    }
+
+    @keyframes goldShimmer {
+      0%   { background-position: 100% 0; }
+      50%  { background-position: 0% 0; }
+      100% { background-position: 100% 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Have You Spotted the Wolf?</h1>
+  </div>
+</body>
 </html>
