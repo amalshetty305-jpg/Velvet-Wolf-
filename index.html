@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
   <title>Have You Spotted the Wolf?</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;600&display=swap');
@@ -16,10 +16,13 @@
     body {
       background-color: #ffffff;
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+      -webkit-text-size-adjust: 100%;
     }
 
     .wolf-runner {
@@ -53,44 +56,66 @@
     }
 
     .container {
+      width: 100%;
+      max-width: 100%;
       text-align: center;
-      padding: 2rem;
+      padding: 1.25rem;
+      display: flex;
+      justify-content: center;
     }
 
     h1 {
       font-family: 'Cormorant SC', serif;
       font-weight: 300;
-      font-size: clamp(1.8rem, 5vw, 4.5rem);
-      letter-spacing: 0.18em;
+      font-size: min(4.5rem, calc((100vw - 2.5rem) / 38));
+      letter-spacing: 0.12em;
+      line-height: 1.35;
       color: transparent;
       background: linear-gradient(105deg, #7a5a00, #c9970a, #f5c518, #e8b800, #c9970a, #7a5a00);
       background-size: 300% 100%;
       -webkit-background-clip: text;
       background-clip: text;
+      display: inline-block;
+      max-width: calc(100vw - 2.5rem);
       white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #c9970a;
-      width: 0;
+      opacity: 0;
+      transform: scale(1.4);
       visibility: hidden;
       animation:
-        showCaption 0s 3.1s forwards,
-        typing 3.5s steps(26, end) 3.1s forwards,
-        goldShimmer 5s ease-in-out 6.6s infinite,
-        blink 0.75s step-end 6.6s 6;
+        captionZoomOut 1.2s ease-out 3.1s forwards,
+        goldShimmer 5s ease-in-out 4.3s infinite;
     }
 
-    @keyframes showCaption {
-      to { visibility: visible; }
+    @media (max-width: 640px) {
+      .wolf-runner img {
+        width: clamp(90px, 28vw, 160px);
+      }
+
+      .container {
+        padding: 1rem 0.85rem;
+      }
+
+      h1 {
+        font-size: clamp(0.82rem, 3.6vw, 1.15rem);
+        letter-spacing: 0.05em;
+        line-height: 1.5;
+        white-space: normal;
+        text-align: center;
+        max-width: min(22em, calc(100vw - 1.7rem));
+      }
     }
 
-    @keyframes typing {
-      from { width: 0; border-right-color: #c9970a; }
-      to   { width: 100%; border-right-color: #c9970a; }
-    }
-
-    @keyframes blink {
-      0%, 100% { border-right-color: #c9970a; }
-      50%       { border-right-color: transparent; }
+    @keyframes captionZoomOut {
+      0% {
+        opacity: 0;
+        transform: scale(1.4);
+        visibility: visible;
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+      }
     }
 
     @keyframes goldShimmer {
@@ -106,7 +131,7 @@
   </div>
 
   <div class="container">
-    <h1>have you spotted the wolf?</h1>
+    <h1>have you spotted the wolf at william square, liverpool yet?</h1>
   </div>
 </body>
 </html>
