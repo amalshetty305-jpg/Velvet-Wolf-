@@ -65,10 +65,9 @@
     }
 
     h1 {
-      --caption-chars: 62;
       font-family: 'Cormorant SC', serif;
       font-weight: 300;
-      font-size: min(4.5rem, calc((100vw - 2.5rem) / (var(--caption-chars) * 0.62)));
+      font-size: min(4.5rem, calc((100vw - 2.5rem) / 38));
       letter-spacing: 0.12em;
       line-height: 1.35;
       color: transparent;
@@ -79,15 +78,12 @@
       display: inline-block;
       max-width: calc(100vw - 2.5rem);
       white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid #c9970a;
-      width: 0;
+      opacity: 0;
+      transform: scale(1.4);
       visibility: hidden;
       animation:
-        showCaption 0s 3.1s forwards,
-        typing 4.6s steps(62, end) 3.1s forwards,
-        goldShimmer 5s ease-in-out 6.6s infinite,
-        blink 0.75s step-end 6.6s 6;
+        captionZoomOut 1.2s ease-out 3.1s forwards,
+        goldShimmer 5s ease-in-out 4.3s infinite;
     }
 
     @media (max-width: 640px) {
@@ -107,25 +103,19 @@
         text-align: center;
         max-width: min(22em, calc(100vw - 1.7rem));
       }
+    }
 
-      @keyframes typing {
-        from { width: 0; border-right-color: #c9970a; }
-        to   { width: min(22em, calc(100vw - 1.7rem)); border-right-color: #c9970a; }
+    @keyframes captionZoomOut {
+      0% {
+        opacity: 0;
+        transform: scale(1.4);
+        visibility: visible;
       }
-    }
-
-    @keyframes showCaption {
-      to { visibility: visible; }
-    }
-
-    @keyframes typing {
-      from { width: 0; border-right-color: #c9970a; }
-      to   { width: 62ch; border-right-color: #c9970a; }
-    }
-
-    @keyframes blink {
-      0%, 100% { border-right-color: #c9970a; }
-      50%       { border-right-color: transparent; }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+      }
     }
 
     @keyframes goldShimmer {
